@@ -2,12 +2,15 @@ var sound_perc;
 var sound_hihat;
 var sound_kick;
 var sound_snare;
+var sound_tom;
 
 function preload() {
     sound_perc = loadSound("./sounds/perc.wav")
     sound_hihat = loadSound("./sounds/hihat.wav")
     sound_kick = loadSound("./sounds/kick.wav")
     sound_snare = loadSound("./sounds/snare.wav")
+    sound_tom = loadSound("./sounds/tom.wav")
+
 }
 
 function setup() {
@@ -37,6 +40,10 @@ function keyPressed(keyEvent) {
 
         case 'keyr':
             sound_snare.play()
+            break;
+
+            case 'keyt':
+            sound_tom.play()
             break;
     }
 
