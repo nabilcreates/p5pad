@@ -1,3 +1,11 @@
+// INIT BUTTON
+var kickButton;
+var hihatButton;
+var percButton;
+var snareButton;
+var tomButton;
+
+// INIT SOUNDS
 var sound_perc;
 var sound_hihat;
 var sound_kick;
@@ -14,10 +22,43 @@ function preload() {
 }
 
 function setup() {
+
+    // MAKE BUTTON CORRESPOND
+    kickButton = select(".kick")
+    hihatButton = select(".hihat")
+    percButton = select(".perc")
+    snareButton = select(".snare")
+    tomButton = select(".tom")
+
     createCanvas(500, 500)
 }
 
 function draw() {
+    kickButton.mousePressed(() => {
+        console.log('Kick button pressed')
+        sound_kick.play()
+    })
+
+    kickButton.mousePressed(() => {
+        console.log('kickButton')
+        sound_kick.play()
+    })
+    hihatButton.mousePressed(() => {
+        console.log('hihatButton')
+        sound_hihat.play()
+    })
+    percButton.mousePressed(() => {
+        console.log('percButton')
+        sound_perc.play()
+    })
+    snareButton.mousePressed(() => {
+        console.log('snareButton')
+        sound_snare.play()
+    })
+    tomButton.mousePressed(() => {
+        console.log('tomButton')
+        sound_tom.play()
+    })
 
 }
 
@@ -42,7 +83,7 @@ function keyPressed(keyEvent) {
             sound_snare.play()
             break;
 
-            case 'keyt':
+        case 'keyt':
             sound_tom.play()
             break;
     }
