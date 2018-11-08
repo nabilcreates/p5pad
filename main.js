@@ -4,6 +4,7 @@ var hihatButton;
 var percButton;
 var snareButton;
 var tomButton;
+var clapButton;
 
 // INIT SOUNDS
 var sound_perc;
@@ -18,6 +19,7 @@ function preload() {
     sound_kick = loadSound("./sounds/kick.wav")
     sound_snare = loadSound("./sounds/snare.wav")
     sound_tom = loadSound("./sounds/tom.wav")
+    sound_clap = loadSound("./sounds/clap.wav")
 
 }
 
@@ -29,6 +31,7 @@ function setup() {
     percButton = select(".perc")
     snareButton = select(".snare")
     tomButton = select(".tom")
+    clapButton = select(".clap")
 
     createCanvas(500, 500)
 }
@@ -60,6 +63,11 @@ function draw() {
         sound_tom.play()
     })
 
+    clapButton.mousePressed(() => {
+        console.log('clapButton')
+        sound_clap.play()
+    })
+
 }
 
 function keyPressed(keyEvent) {
@@ -85,6 +93,10 @@ function keyPressed(keyEvent) {
 
         case 'keyt':
             sound_tom.play()
+            break;
+
+        case 'keyy':
+            sound_clap.play()
             break;
     }
 
